@@ -1,223 +1,129 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <!-- Basic Meta Tags -->
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PrimeCare</title>
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,500,700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    
+    <style>
+        .map-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 70px;
+        }
+        
+        #map { 
+            height: 800px; 
+            width: 100%; 
+            border: 5px solid #333;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            font-size: 90px;
+            font-weight: bold;
+            color: white;
+            -webkit-text-stroke: 2px black;
+            text-align: center;
+        }
+    </style>
 </head>
 
-<<body class="sub_page">
-    <!-- Hero Section -->
-    <div class="hero_area">
-        <header class="header_section">
-                  <div class="contact_nav_container">
-        <div class="container">
-          <div class="contact_nav">
-            <a href="https://maps.app.goo.gl/UNX4qgBXyf1o5S5VA">
-              <i class="fa fa-map-marker" aria-hidden="true"></i>
-              <span>
-                Address : Panabo City National High School
-              </span>
-            </a>
-            <a href="">
-              <i class="fa fa-envelope" aria-hidden="true"></i>
-              <span>
-                Email : nextgenawareph@gmail.com
-              </span>
-            </a>
-            <a href="">
-              <i class="fa fa-phone" aria-hidden="true"></i>
-              <span>
-                Phone Call : 09687994921
-              </span>
-            </a>
-          </div>
+<body class="sub_page">
+    <header class="header_section">
+        <div class="contact_nav_container">
+            <div class="container">
+                <div class="contact_nav">
+                    <a href="https://maps.app.goo.gl/UNX4qgBXyf1o5S5VA">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <span>Address: Panabo City National High School</span>
+                    </a>
+                    <a href="mailto:nextgenawareph@gmail.com">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <span>Email: nextgenawareph@gmail.com</span>
+                    </a>
+                    <a href="tel:09687994921">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <span>Phone Call: 09687994921</span>
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
-            <div class="container-fluid">
-                <nav class="navbar navbar-expand-lg custom_nav-container">
-                    <div class="custom_menu-btn">
-                        <button onclick="openNav()">
+
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg custom_nav-container">
+                <div class="custom_menu-btn">
+                    <button onclick="openNav()">
+                        <span class="s-1"></span>
+                        <span class="s-2"></span>
+                        <span class="s-3"></span>
+                    </button>
+                </div>
+                <div id="myNav" class="overlay">
+                    <div class="menu_btn-style">
+                        <button onclick="closeNav()">
                             <span class="s-1"></span>
                             <span class="s-2"></span>
                             <span class="s-3"></span>
                         </button>
                     </div>
-                    <div id="myNav" class="overlay">
-                        <div class="menu_btn-style">
-                            <button onclick="closeNav()">
-                                <span class="s-1"></span>
-                                <span class="s-2"></span>
-                                <span class="s-3"></span>
-                            </button>
-                        </div>
-                        <div class="overlay-content">
-                            <a href="index.html">Home</a>
-                            <a href="about.html">About</a>
-                            <a class="active" href="why.html">Information</a>
-                            <a href="team.html">Action</a>
-                     
-                            <a href="contact.html">Contact Us</a>
-                        </div>
+                    <div class="overlay-content">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About</a>
+                        <a class="active" href="why.html">Information</a>
+                        <a href="team.html">Action</a>
+                        <a href="contact.html">Contact Us</a>
                     </div>
-                    <a class="navbar-brand" href="index.html"><span>NextGenAware</span></a>
-                    
-                </nav>
-            </div>
-        </header>
-    </div>
-    
+                </div>
+                <a class="navbar-brand" href="index.html"><span>NextGenAware</span></a>
+            </nav>
+        </div>
     </header>
-  </div>
 
-
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Map with Markers</title>
-	
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-	
-    <style>
-        #map { height: 800px; width: 800%; }
-		.map-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-top: 70px;
-}
-#map { 
-    height: 800px; 
-    width: 80%; 
-    border: 5px solid #333;  /* Thick dark border */
-    border-radius: 10px;  /* Rounded corners */
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow */
-}
-		h1 {
-    font-size: 90px;
-    font-weight: bold;
-    color: white; /* Inner text color */
-    -webkit-text-stroke: 2px black; /* Border thickness and color */
-    text-align: center;
-}
-    </style>
-</head>
-<body>
     <h1>Stores that sell contraceptives</h1>
-	<div class="map-container">
-    <div id="map"></div>
+    <div class="map-container">
+        <div id="map"></div>
+    </div>
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
-        // Initialize the map
-        var map = L.map('map').setView([7.3081, 125.6841], 13); // Panabo City coords as default
+        var map = L.map('map').setView([7.3081, 125.6841], 13);
 
-        // Add OpenStreetMap tiles
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
 
-        // Add markers
-        var marker1 = L.marker([7.3066, 125.6865]).addTo(map)
-            .bindPopup("<b>Rose Pharmacy - Panabo Grand Mall</b><br>A well-known pharmacy chain offering various pharmaceutical products. Situated inside Gaisano Grand Mall of Panabo City. .");
-			
-		var marker1 = L.marker([7.3021, 125.6808]).addTo(map)
-            .bindPopup("<b>Mercury Drug - Panabo City</b>A leading pharmacy chain in the Philippines, likely to carry contraceptive products. Located along the National Highway in Panabo City. <br> ");
-			
-		var marker1 = L.marker([7.3027, 125.6842]).addTo(map)
-            .bindPopup("<b>Watsons Pharmacy - Panabo City</b>A popular pharmacy chain offering a variety of health and wellness products, including contraceptives. <br> ");
-			
-		
-		
-    
-	</script></div>
-	<br>
-	<br>
-	
-	 <section class="info_section layout_padding2">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="info_contact">
-            <h5>
-              Address
-            </h5>
-            <div class="contact_link_box">
-              <a href="">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span>
-                  Location
-                </span>
-              </a>
-              <a href="">
-                <i class="fa fa-phone" aria-hidden="true"></i>
-                <span>
-                  Call 09687994921
-                </span>
-              </a>
-              <a href="">
-                <i class="fa fa-envelope" aria-hidden="true"></i>
-                <span>
-                  nextgenawareph@gmail.com
-                </span>
-              </a>
-            </div>
-          </div>
-          <div class="info_social">
-            <a href="https://www.facebook.com/profile.php?id=61574167930511&rdid=kWSwyNSByCtXS9CB#">
-              <i class="fa fa-facebook" aria-hidden="true"></i>
-            </a>
-            
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="info_link_box">
-            <h5>
-              Navigation
-            </h5>
-            <div class="info_links">
-              <a class="" href="index.html"> <i class="fa fa-angle-right" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a>
-              <a class="" href="about.html"> <i class="fa fa-angle-right" aria-hidden="true"></i> About</a>
-              <a class="" href="why.html"> <i class="fa fa-angle-right" aria-hidden="true"></i> Information </a>
-              <a class="" href="team.html"> <i class="fa fa-angle-right" aria-hidden="true"></i> Action</a>
-              
-              <a class="" href="contact.html"> <i class="fa fa-angle-right" aria-hidden="true"></i> Contact Us</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <h5>
-            Newsletter
-          </h5>
-          <form action="https://formspree.io/f/xgvalnwr" method="POST">
-     
-            
-                <input type="email" name="email" placeholder="Email" required />
-                
-            
-             
-              <div class="btn-box">
-            <button type="submit">
-              Subscribe
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-</body>
-</html>
+        L.marker([7.3066, 125.6865]).addTo(map)
+            .bindPopup("<b>Rose Pharmacy - Panabo Grand Mall</b><br>A well-known pharmacy chain.");
+
+        L.marker([7.3021, 125.6808]).addTo(map)
+            .bindPopup("<b>Mercury Drug - Panabo City</b><br>A leading pharmacy chain in the Philippines.");
+
+        L.marker([7.3027, 125.6842]).addTo(map)
+            .bindPopup("<b>Watsons Pharmacy - Panabo City</b><br>A popular pharmacy chain.");
+    </script>
+
+    <section class="info_section layout_padding2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Address</h5>
+                    <div class="contact_link_box">
+                        <a href=""><i class="fa fa-map-marker"></i> Location</a>
+                        <a href="tel:09687994921"><i class="fa fa-phone"></i> Call 09687994921</a>
+                        <a href="mailto:nextgenawareph@gmail.com"><i class="fa fa-envelope
+
 
